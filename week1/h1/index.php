@@ -1,21 +1,17 @@
 <?php
-require_once 'class/Elang.php';
-require_once 'class/Hewan.php';
-require_once 'class/Elang.php';
-require_once 'class/Harimau.php';
+require_once('class/Elang.php');
+require_once('class/Harimau.php');
 
-$elang = new Elang();
-$elang->set_Nama('Elang_3');
+$elang = new Elang('elang_1', 2, 'terbang tinggi', 10, 5);
+$harimau = new Harimau('harimau_1', 4, 'lari cepat', 7, 8);
 
-// $elang->getInfoHewan();
-$elang->atraksi();
-echo '<br><br>';
-$harimau = new Harimau();
-$harimau->set_Nama('Harimau_1');
-echo '<br>';
-$harimau->atraksi();
-echo '<br>';
-$harimau->serang($harimau->get_NamaHarimau(),$elang->get_NamaElang());
-echo '<br>';
+echo $elang->serang($harimau);
+echo $elang->diserang($harimau);
+echo '<br><br>Darah Elang';
+echo '<br>===========<br>';
+echo $elang->get_darah();
+echo '<br><br>Darah Harimau';
+echo '<br>===========<br>';
+echo $harimau->get_darah();
 ?>
 
