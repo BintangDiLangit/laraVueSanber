@@ -15,10 +15,10 @@ class CreateOtpCodesTable extends Migration
     {
         Schema::create('otp_codes', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            // $table->bigIncrements('id');
-            $table->string('otp');
+            $table->integer('otp');
             $table->uuid('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->datetime('valid_until');
             $table->timestamps();
         });
     }

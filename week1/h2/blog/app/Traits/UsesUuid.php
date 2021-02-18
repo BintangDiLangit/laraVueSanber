@@ -1,20 +1,16 @@
 <?php
 
-namespace App;
-
-use Illuminate\Database\Eloquent\Model;
+namespace App\Traits;
 use Illuminate\Support\Str;
-class role extends Model
+trait UsesUuid
 {
-    protected static function boot(){
-        static::creating(function($model){
-            parent::boot();
+    public static function bootUsesUuid(){
+        static::creating(function ($model) {
             if ( ! $model->getKey()) {
                 $model->{$model->getKeyName()} = (string) Str::uuid();
             }
         });
     }
-
 
     public function getIncrementing()
     {
@@ -26,3 +22,5 @@ class role extends Model
         return 'string';
     }
 }
+
+?>

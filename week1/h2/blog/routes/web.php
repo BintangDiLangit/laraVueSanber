@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// bisa pasang di sini
+// Route::get('/user','UserController@user')->middleware('verifEmail');
+
+// for group
+Route::middleware('verifEmail')->group(function () {
+    Route::get('/user','UserController@user');
+    Route::get('/user1','UserController@user1');
+// Route::get('/user2','UserController@user');
+// Route::get('/user3','UserController@user');
+});
+
+Route::get('/admin', 'UserController@admin');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
