@@ -11,18 +11,18 @@ class UserController extends Controller
     // {
     //     $this->middleware('verifEmail');
     // }
-    public function user(){
+    // public function user(){
         // $current_date = Carbon::now()->day;
         // dd($current_date);
-            return 'Berhasil Masuk';
+    //         return 'Berhasil Masuk';
 
-    }
-    public function user1(){
-            return 'Berhasil Masuk Ke User 1';
+    // }
+    // public function user1(){
+    //         return 'Berhasil Masuk Ke User 1';
 
-    }
-    public function admin(){
-            return 'Admin Berhasil Masuk';
+    // }
+    // public function admin(){
+    //         return 'Admin Berhasil Masuk';
 
-    }
+    // }
 }
